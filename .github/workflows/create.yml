@@ -17,9 +17,9 @@ jobs:
             - name: configure aws credentials
               uses: aws-actions/configure-aws-credentials@v3
               with: 
-                   aws-acess-key-id: ${{ secrets.AWS_ACESS_KEY }}
-                   aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-                   aws-region: ${{ env.TF_VAR_region}}
+                aws-access-key-id: ${{ secrets.AWS_ACESS_KEY }}
+                aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+                aws-region: ${{ env.TF_VAR_region}}
         
             - name: Set up terraform
               uses: hashicorp/setup-terraform@v1
