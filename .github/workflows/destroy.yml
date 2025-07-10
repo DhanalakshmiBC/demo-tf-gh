@@ -28,7 +28,7 @@ jobs:
              run: terraform init
         
            - name: terraform plan
-             run: terraform plan -destroy -out=tfplan
+             run: terraform plan -destroy -out=tfplan-destroy
 
            - name: terraform apply
              run: terraform apply -auto-approve tfplan-destroy
