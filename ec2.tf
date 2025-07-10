@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = "ami-061ad72bc140532fd" # Replace with a valid AMI ID for us-west-2
   instance_type = "t2.micro"
-  security_groups = [aws_security_group_allow_ssh.id]
+  security_groups = [aws_security_group.demo_sg.id]
   subnet_id= aws_subnet.main_subnet.id
 
   tags = {
