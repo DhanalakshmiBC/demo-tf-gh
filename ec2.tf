@@ -7,6 +7,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   security_groups = [aws_security_group.demo_sg.id]
   subnet_id= aws_subnet.main_subnet.id
+  associate_public_ip_address = true
 
   tags = {
     Name = "demo-instance"
