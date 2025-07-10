@@ -1,0 +1,29 @@
+name: create-tf-resource
+on: 
+    push:
+        branches:
+            - main
+env:
+    TF_VAR_region: us-west2
+    TF_VERSION: 1.5.7
+
+jobs:
+    creat-tf-re:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v2
+        
+            - name: Set up terraform
+              uses: hashicorp/setup-terraform@v1
+              with:
+                terraform_version: ${{ env.TF_VERSION}}
+            
+            - name: Terraform Init
+              run: terraform init
+            
+            - name: Terraform plan
+              run: terraform plan -out=tfplan
+
+            - name: terraform apply
+              run: terraform apply -auto-approve tfplan
