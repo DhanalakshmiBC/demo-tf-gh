@@ -10,6 +10,8 @@ jobs:
            - name: checkout repo
              uses: actions/checkout@v2
 
+           
+
            - name: Set up terraform
              uses: hashicorp/setup-terraform@v1
              with:
