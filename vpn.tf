@@ -10,7 +10,7 @@ resource "aws_vpc" "demo_vpn" {
 resource "aws_subnet" "main_subnet" {
     cidr_block = "10.0.1.0/24"
     vpc_id = aws_vpc.demo_vpn.id
-    availability_zone = "us-west2a"
+    availability_zone = "us-west-2a"
     tags = {
         Name = "main-subnet"
     }
